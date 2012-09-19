@@ -313,9 +313,9 @@ function HSL_to_RGB(H, S, L){
      S = S / 100;
      L = L / 100;
 		
-	if ( S == 0 )                       //HSL values = 0 ÷ 1
+	if ( S == 0 )                       //HSL values = 0 ï¿½ 1
 	{
-	   R = L * 255;                      //RGB results = 0 ÷ 255
+	   R = L * 255;                      //RGB results = 0 ï¿½ 255
 	   G = L * 255;
 	   B = L * 255;
 	}
@@ -344,7 +344,7 @@ function HSL_to_RGB(H, S, L){
 // Convert RGB Color to HSL values
 function RGB_to_HSL(R, G, B){
 	
-	var_R = ( R / 255 );                 //Where RGB values = 0 ÷ 255
+	var_R = ( R / 255 );                 //Where RGB values = 0 ï¿½ 255
 	var_G = ( G / 255 );
 	var_B = ( B / 255 );
 	
@@ -356,7 +356,7 @@ function RGB_to_HSL(R, G, B){
 	
 	if ( del_Max == 0 )                     //This is a gray, no chroma...
 	{
-	   H = 0;                                //HSL results = 0 ÷ 1
+	   H = 0;                                //HSL results = 0 ï¿½ 1
 	   S = 0;
 	}
 	else                                    //Chromatic data...
@@ -896,7 +896,8 @@ function eventsCatcher(){
 	 */
 	jQuery(".lightness-slider").mousedown( function(event){
 		
-		jQuery(document).unbind()
+		jQuery(document).unbind('mousemove');
+        jQuery(document).unbind('mouseup');
 		
 		// Stop the event propagation to avoid light-table click event fired
 		if (!event) var event = window.event;
@@ -953,7 +954,8 @@ function eventsCatcher(){
 		 * FIXME : Need to remove only our events 
 		 */
 		jQuery(document).bind('mouseup', params, function(event){
-			jQuery(document).unbind()
+			jQuery(document).unbind('mousemove');
+            jQuery(document).unbind('mouseup');
 		});
 		
 	});
