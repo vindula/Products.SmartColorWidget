@@ -45,8 +45,8 @@ class SmartColorWidget(StringWidget):
     _properties = StringWidget._properties.copy()
     _properties.update({
         'macro': '@@smartcolorwidget-macros',
-        'helper_js': ('++resource++smartcolorwidget-static/smartcolor_helper.js',),
-        'helper_css': ('@@smartcolor_helper.css',),
+#        'helper_js': ('++resource++smartcolorwidget-static/smartcolor_helper.js',),
+#        'helper_css': ('@@smartcolor_helper.css',),
         })
 
     security = ClassSecurityInfo()

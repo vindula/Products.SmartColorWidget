@@ -1081,12 +1081,18 @@ function loadSmartColorPickers() {
       jQuery(this).html(widget);    
   })
   
+/*
   jQuery(document).ready(function(){
-  	initDragables();
-  	eventsCatcher();
+*/
+	initDragables();
+	eventsCatcher();
+/*
   });   
+*/
 }
 
 
-jQuery(document).ready(loadSmartColorPickers);
+jQuery(document).ready(function(){
+	loadSmartColorPickers();
+});
 
